@@ -34,9 +34,9 @@ const material = new THREE.MeshNormalMaterial({ wireframe: true })
 new OrbitControls(camera, renderer.domElement)
 
 const cube = new THREE.Mesh(geometry, material)
-sceneA.add(cube)
-sceneB.add(cube)
-sceneC.add(cube)
+// sceneA.add(cube)
+// sceneB.add(cube)
+// sceneC.add(cube)
 
 const stats = new Stats();
 document.body.appendChild(stats.dom);
@@ -70,7 +70,7 @@ function animate() {
   // cube.rotation.x += 0.01
   // cube.rotation.y += 0.01
 
-  renderer.render(activeScene, camera)
+  renderer.render(activeScene.add(cube), camera)
 
   stats.update()
 }
